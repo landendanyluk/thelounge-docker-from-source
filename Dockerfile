@@ -6,8 +6,8 @@ RUN apk --no-cache add \
     git
 
 # needed to create merge commits
-RUN git config --global user.name "Docker" && \
-    git config --global user.email "docker@local.docker"
+RUN git config --global user.name "landendanyluk" && \
+    git config --global user.email "landendanyluk@gmail.com"
 
 ENV THELOUNGE_HOME /var/opt/thelounge
 VOLUME "${THELOUNGE_HOME}"
@@ -17,7 +17,7 @@ ARG GIT_REVISION=master
 # comma separated list of PRs to try and merge into $GIT_REVISION, will fail silently and continue if automatic merge fails
 ARG PULL_REQUESTS=
 
-RUN git clone https://github.com/thelounge/thelounge.git . && \
+RUN git clone https://github.com/landendanyluk/thelounge.git . && \
     git checkout "$GIT_REVISION"
 
 # merge all (optional) pull requests
